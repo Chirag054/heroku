@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from django.conf import settings
 
 import pandas as pd
-import numpy as np 
-import requests 
+import requests
 import json, os
 import csv
 
