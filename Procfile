@@ -1,1 +1,1 @@
-web: gunicorn GeoLocationAPI-main.wsgi
+web: gunicorn geolocationapi.wsgi
