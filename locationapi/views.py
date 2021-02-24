@@ -8,9 +8,6 @@ import json, os
 import csv
 
 
-# Read Config File
-with open(os.path.join(settings.BASE_DIR, 'config.json')) as secrets_file:
-    config = json.load(secrets_file)
 
 
 def upload_excel(request):
@@ -26,7 +23,7 @@ def upload_excel(request):
             excel_file = request.FILES["excel_file"]
             excel_data = pd.read_csv(excel_file)
             for val in excel_data['address']:
-                url = f"http://www.mapquestapi.com/geocoding/v1/address?key={config['MAPQUEST_API_KEY']}&location={val}"
+                url = f"http://www.mapquestapi.com/geocoding/v1/address?key={"9BQLAZrmm65boiXlfL0IDHmZWyW1aAKh"}&location={val}"
                 output = requests.get(url)
                 json_output = output.json()
                 loc = json_output['results'][0]['providedLocation']['location']
